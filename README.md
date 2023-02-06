@@ -135,6 +135,12 @@ Stop a pod:
 runpodctl stop pod {podId}
 ```
 
+# script to stop all pods
+ 
+This can be used in a cron job to prevent cost overages. 
+
+ `./runpodctl get pod | tail +2 | egrep RUNNING | cut -f 1 | xargs ./runpodctl stop pod`
+
 <br />
 <br />
 
